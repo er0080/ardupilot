@@ -247,6 +247,13 @@ void Vector3<T>::rotate(enum Rotation rotation)
     case ROTATION_CUSTOM: // no-op; caller should perform custom rotations via matrix multiplication
         return;
     }
+    case ROTATION_EXTRA_SPECIAL: {  //ie ROTATION_PITCH_220
+        float tmpx = x;
+        float tmpz = z;
+        x = -0.766044443f * tmpx + -0.64278761f * tmpz;
+        z = 0.64278761f * tmpx +  -0.766044443f * tmpz;
+        return;
+    }
 }
 
 template <typename T>
