@@ -22,6 +22,8 @@
 #include "hwdef/common/stm32_util.h"
 #include "hwdef/common/watchdog.h"
 
+#include <GCS_MAVLink/GCS.h>
+
 #if HAL_USE_PWM == TRUE
 
 using namespace ChibiOS;
@@ -808,6 +810,9 @@ void RCOutput::dma_allocate(Shared_DMA *ctx)
         if (group.dma_handle == ctx) {
             chSysLock();
             dmaStreamAllocate(group.dma, 10, dma_irq_callback, &group);
+            
+            gcs().send_text(MAV_SEVERITY_INFO, "RC Out DMA allocated: stream %u, channel %u", group.dma_up_stream_id, group.dma_up_channel_id);
+            
             chSysUnlock();
         }
     }
