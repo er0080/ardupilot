@@ -18,6 +18,8 @@
 #include "SoftSigReader.h"
 #include "hwdef/common/stm32_util.h"
 
+#include <GCS_MAVLink/GCS.h>
+
 #if CONFIG_HAL_BOARD == HAL_BOARD_CHIBIOS
 
 using namespace ChibiOS;
@@ -42,6 +44,9 @@ bool SoftSigReader::attach_capture_timer(ICUDriver* icu_drv, icuchannel_t chan, 
                                             12,  //IRQ Priority
                                             (stm32_dmaisr_t)_irq_handler,
                                             (void *)this);
+    
+    gcs().send_text(MAV_SEVERITY_INFO, "ICU DMA allocated: stream %u, channel %u", dma_stream, dma_channel);
+    
     osalDbgAssert(!dma_allocated, "stream already allocated");
     chSysUnlock();
     //setup address for full word transfer from Timer
