@@ -228,7 +228,7 @@ void UARTDriver::begin(uint32_t b, uint16_t rxS, uint16_t txS)
                                                (stm32_dmaisr_t)rxbuff_full_irq,
                                                (void *)this);
                     
-                    gcs().send_text(MAV_SEVERITY_INFO, "UART RX DMA allocated: stream %u, channel %u", sdef.dma_rx_stream_id, sdef.dma_rx_channel_id);
+                    //gcs().send_text(MAV_SEVERITY_INFO, "UART RX DMA allocated: stream %u, channel %u", sdef.dma_rx_stream_id, sdef.dma_rx_channel_id);
                     
                     osalDbgAssert(!dma_allocated, "stream already allocated");
                     chSysUnlock();
@@ -314,7 +314,7 @@ void UARTDriver::dma_tx_allocate(Shared_DMA *ctx)
                                            (stm32_dmaisr_t)tx_complete,
                                            (void *)this);
     
-    gcs().send_text(MAV_SEVERITY_INFO, "UART TX DMA allocated: stream %u, channel %u", sdef.dma_tx_stream_id, sdef.dma_tx_channel_id);
+    //gcs().send_text(MAV_SEVERITY_INFO, "UART TX DMA allocated: stream %u, channel %u", sdef.dma_tx_stream_id, sdef.dma_tx_channel_id);
     
     osalDbgAssert(!dma_allocated, "stream already allocated");
     chSysUnlock();

@@ -45,7 +45,7 @@ bool SoftSigReader::attach_capture_timer(ICUDriver* icu_drv, icuchannel_t chan, 
                                             (stm32_dmaisr_t)_irq_handler,
                                             (void *)this);
     
-    gcs().send_text(MAV_SEVERITY_INFO, "ICU DMA allocated: stream %u, channel %u", dma_stream, dma_channel);
+    //gcs().send_text(MAV_SEVERITY_INFO, "ICU DMA allocated: stream %u, channel %u", dma_stream, dma_channel);
     
     osalDbgAssert(!dma_allocated, "stream already allocated");
     chSysUnlock();

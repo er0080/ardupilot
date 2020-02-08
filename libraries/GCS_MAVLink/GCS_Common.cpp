@@ -136,7 +136,7 @@ GCS_MAVLINK::setup_uart(const AP_SerialManager& serial_manager, AP_SerialManager
         return;
     }
     
-    if (mavlink_protocol == AP_SerialManager::SerialProtocol_MAVLink2) {
+    if ( (mavlink_protocol == AP_SerialManager::SerialProtocol_MAVLink2) || (mavlink_protocol == AP_SerialManager::SerialProtocol_MAVLink2_FONA) ) {
         // load signing key
         load_signing_key();
 

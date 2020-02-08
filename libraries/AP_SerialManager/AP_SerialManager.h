@@ -64,14 +64,20 @@
 #define AP_SERIALMANAGER_SToRM32_BUFSIZE_RX     128
 #define AP_SERIALMANAGER_SToRM32_BUFSIZE_TX     128
 
-#define AP_SERIALMANAGER_VOLZ_BAUD           115
-#define AP_SERIALMANAGER_VOLZ_BUFSIZE_RX     128
-#define AP_SERIALMANAGER_VOLZ_BUFSIZE_TX     128
+#define AP_SERIALMANAGER_VOLZ_BAUD              115
+#define AP_SERIALMANAGER_VOLZ_BUFSIZE_RX        128
+#define AP_SERIALMANAGER_VOLZ_BUFSIZE_TX        128
 
 // SBUS servo outputs
-#define AP_SERIALMANAGER_SBUS1_BAUD           100000
-#define AP_SERIALMANAGER_SBUS1_BUFSIZE_RX     16
-#define AP_SERIALMANAGER_SBUS1_BUFSIZE_TX     32
+#define AP_SERIALMANAGER_SBUS1_BAUD             100000
+#define AP_SERIALMANAGER_SBUS1_BUFSIZE_RX       16
+#define AP_SERIALMANAGER_SBUS1_BUFSIZE_TX       32
+
+//FONA 800 stuff
+#define AP_FONA_REM_HOSTNAME                    "ericandbrianne.com"
+#define AP_FONA_REM_PORT                        "2323"
+#define AP_FONA_APN                             "epc.tmobile.com"
+#define AP_FONA_READBUFF_SIZE                   256
 
 class AP_SerialManager {
 public:
@@ -102,6 +108,7 @@ public:
         SerialProtocol_ESCTelemetry = 16,
         SerialProtocol_Devo_Telem = 17,
         SerialProtocol_OpticalFlow = 18,
+	SerialProtocol_MAVLink2_FONA = 19,
     };
 
     // get singleton instance

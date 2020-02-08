@@ -60,7 +60,7 @@ const AP_Param::GroupInfo AP_SerialManager::var_info[] = {
     // @Param: 1_PROTOCOL
     // @DisplayName: Telem1 protocol selection
     // @Description: Control what protocol to use on the Telem1 port. Note that the Frsky options require external converter hardware. See the wiki for details.
-    // @Values: -1:None, 1:MAVLink1, 2:MAVLink2, 3:Frsky D, 4:Frsky SPort, 5:GPS, 7:Alexmos Gimbal Serial, 8:SToRM32 Gimbal Serial, 9:Rangefinder, 10:FrSky SPort Passthrough (OpenTX), 11:Lidar360, 13:Beacon, 14:Volz servo out, 15:SBus servo out, 16:ESC Telemetry, 17:Devo Telemetry, 18:OpticalFlow
+    // @Values: -1:None, 1:MAVLink1, 2:MAVLink2, 3:Frsky D, 4:Frsky SPort, 5:GPS, 7:Alexmos Gimbal Serial, 8:SToRM32 Gimbal Serial, 9:Rangefinder, 10:FrSky SPort Passthrough (OpenTX), 11:Lidar360, 13:Beacon, 14:Volz servo out, 15:SBus servo out, 16:ESC Telemetry, 17:Devo Telemetry, 18:OpticalFlow, 19:MAVLink2 w/FONA 800
     // @User: Standard
     // @RebootRequired: True
     AP_GROUPINFO("1_PROTOCOL",  1, AP_SerialManager, state[1].protocol, SerialProtocol_MAVLink),
@@ -75,7 +75,7 @@ const AP_Param::GroupInfo AP_SerialManager::var_info[] = {
     // @Param: 2_PROTOCOL
     // @DisplayName: Telemetry 2 protocol selection
     // @Description: Control what protocol to use on the Telem2 port. Note that the Frsky options require external converter hardware. See the wiki for details.
-    // @Values: -1:None, 1:MAVLink1, 2:MAVLink2, 3:Frsky D, 4:Frsky SPort, 5:GPS, 7:Alexmos Gimbal Serial, 8:SToRM32 Gimbal Serial, 9:Rangefinder, 10:FrSky SPort Passthrough (OpenTX), 11:Lidar360, 13:Beacon, 14:Volz servo out, 15:SBus servo out, 16:ESC Telemetry, 17:Devo Telemetry, 18:OpticalFlow
+    // @Values: -1:None, 1:MAVLink1, 2:MAVLink2, 3:Frsky D, 4:Frsky SPort, 5:GPS, 7:Alexmos Gimbal Serial, 8:SToRM32 Gimbal Serial, 9:Rangefinder, 10:FrSky SPort Passthrough (OpenTX), 11:Lidar360, 13:Beacon, 14:Volz servo out, 15:SBus servo out, 16:ESC Telemetry, 17:Devo Telemetry, 18:OpticalFlow, 19:MAVLink2 w/FONA 800
     // @User: Standard
     // @RebootRequired: True
     AP_GROUPINFO("2_PROTOCOL",  3, AP_SerialManager, state[2].protocol, SerialProtocol_MAVLink),
@@ -90,7 +90,7 @@ const AP_Param::GroupInfo AP_SerialManager::var_info[] = {
     // @Param: 3_PROTOCOL
     // @DisplayName: Serial 3 (GPS) protocol selection
     // @Description: Control what protocol Serial 3 (GPS) should be used for. Note that the Frsky options require external converter hardware. See the wiki for details.
-    // @Values: -1:None, 1:MAVLink1, 2:MAVLink2, 3:Frsky D, 4:Frsky SPort, 5:GPS, 7:Alexmos Gimbal Serial, 8:SToRM32 Gimbal Serial, 9:Rangefinder, 10:FrSky SPort Passthrough (OpenTX), 11:Lidar360, 13:Beacon, 14:Volz servo out, 15:SBus servo out, 16:ESC Telemetry, 17:Devo Telemetry, 18:OpticalFlow
+    // @Values: -1:None, 1:MAVLink1, 2:MAVLink2, 3:Frsky D, 4:Frsky SPort, 5:GPS, 7:Alexmos Gimbal Serial, 8:SToRM32 Gimbal Serial, 9:Rangefinder, 10:FrSky SPort Passthrough (OpenTX), 11:Lidar360, 13:Beacon, 14:Volz servo out, 15:SBus servo out, 16:ESC Telemetry, 17:Devo Telemetry, 18:OpticalFlow, 19:MAVLink2 w/FONA 800
     // @User: Standard
     // @RebootRequired: True
     AP_GROUPINFO("3_PROTOCOL",  5, AP_SerialManager, state[3].protocol, SerialProtocol_GPS),
@@ -105,7 +105,7 @@ const AP_Param::GroupInfo AP_SerialManager::var_info[] = {
     // @Param: 4_PROTOCOL
     // @DisplayName: Serial4 protocol selection
     // @Description: Control what protocol Serial4 port should be used for. Note that the Frsky options require external converter hardware. See the wiki for details.
-    // @Values: -1:None, 1:MAVLink1, 2:MAVLink2, 3:Frsky D, 4:Frsky SPort, 5:GPS, 7:Alexmos Gimbal Serial, 8:SToRM32 Gimbal Serial, 9:Rangefinder, 10:FrSky SPort Passthrough (OpenTX), 11:Lidar360, 13:Beacon, 14:Volz servo out, 15:SBus servo out, 16:ESC Telemetry, 17:Devo Telemetry, 18:OpticalFlow
+    // @Values: -1:None, 1:MAVLink1, 2:MAVLink2, 3:Frsky D, 4:Frsky SPort, 5:GPS, 7:Alexmos Gimbal Serial, 8:SToRM32 Gimbal Serial, 9:Rangefinder, 10:FrSky SPort Passthrough (OpenTX), 11:Lidar360, 13:Beacon, 14:Volz servo out, 15:SBus servo out, 16:ESC Telemetry, 17:Devo Telemetry, 18:OpticalFlow, 19:MAVLink2 w/FONA 800
     // @User: Standard
     // @RebootRequired: True
     AP_GROUPINFO("4_PROTOCOL",  7, AP_SerialManager, state[4].protocol, SerialProtocol_GPS),
@@ -120,7 +120,7 @@ const AP_Param::GroupInfo AP_SerialManager::var_info[] = {
     // @Param: 5_PROTOCOL
     // @DisplayName: Serial5 protocol selection
     // @Description: Control what protocol Serial5 port should be used for. Note that the Frsky options require external converter hardware. See the wiki for details.
-    // @Values: -1:None, 1:MAVLink1, 2:MAVLink2, 3:Frsky D, 4:Frsky SPort, 5:GPS, 7:Alexmos Gimbal Serial, 8:SToRM32 Gimbal Serial, 9:Rangefinder, 10:FrSky SPort Passthrough (OpenTX), 11:Lidar360, 13:Beacon, 14:Volz servo out, 15:SBus servo out, 16:ESC Telemetry, 17:Devo Telemetry, 18:OpticalFlow
+    // @Values: -1:None, 1:MAVLink1, 2:MAVLink2, 3:Frsky D, 4:Frsky SPort, 5:GPS, 7:Alexmos Gimbal Serial, 8:SToRM32 Gimbal Serial, 9:Rangefinder, 10:FrSky SPort Passthrough (OpenTX), 11:Lidar360, 13:Beacon, 14:Volz servo out, 15:SBus servo out, 16:ESC Telemetry, 17:Devo Telemetry, 18:OpticalFlow, 19:MAVLink2 w/FONA 800
     // @User: Standard
     // @RebootRequired: True
     AP_GROUPINFO("5_PROTOCOL",  9, AP_SerialManager, state[5].protocol, SERIAL5_PROTOCOL),
@@ -137,7 +137,7 @@ const AP_Param::GroupInfo AP_SerialManager::var_info[] = {
     // @Param: 6_PROTOCOL
     // @DisplayName: Serial6 protocol selection
     // @Description: Control what protocol Serial6 port should be used for. Note that the Frsky options require external converter hardware. See the wiki for details.
-    // @Values: -1:None, 1:MAVLink1, 2:MAVLink2, 3:Frsky D, 4:Frsky SPort, 5:GPS, 7:Alexmos Gimbal Serial, 8:SToRM32 Gimbal Serial, 9:Rangefinder, 10:FrSky SPort Passthrough (OpenTX), 11:Lidar360, 13:Beacon, 14:Volz servo out, 15:SBus servo out, 16:ESC Telemetry, 17:Devo Telemetry, 18:OpticalFlow
+    // @Values: -1:None, 1:MAVLink1, 2:MAVLink2, 3:Frsky D, 4:Frsky SPort, 5:GPS, 7:Alexmos Gimbal Serial, 8:SToRM32 Gimbal Serial, 9:Rangefinder, 10:FrSky SPort Passthrough (OpenTX), 11:Lidar360, 13:Beacon, 14:Volz servo out, 15:SBus servo out, 16:ESC Telemetry, 17:Devo Telemetry, 18:OpticalFlow, 19:MAVLink2 w/FONA 800
     // @User: Standard
     // @RebootRequired: True
     AP_GROUPINFO("6_PROTOCOL",  12, AP_SerialManager, state[6].protocol, SERIAL6_PROTOCOL),
@@ -210,6 +210,82 @@ void AP_SerialManager::init()
                     state[i].uart->begin(map_baudrate(state[i].baud), 
                                          AP_SERIALMANAGER_MAVLINK_BUFSIZE_RX,
                                          AP_SERIALMANAGER_MAVLINK_BUFSIZE_TX);
+                    break;
+                case SerialProtocol_MAVLink2_FONA:
+                    state[i].uart->begin(map_baudrate(state[i].baud), 
+                                         AP_SERIALMANAGER_MAVLINK_BUFSIZE_RX,
+                                         AP_SERIALMANAGER_MAVLINK_BUFSIZE_TX);
+					
+/*					uint8_t readbuff[AP_FONA_READBUFF_SIZE];
+                    uint8_t readbuff_offset = 0;
+                    
+					state[i].uart->println("ATE0");
+
+					if(!state[i].uart->wait_timeout(2, 1000)){
+						//timeout, log error
+						break;
+					}
+                    
+                    while (state[i].uart->available()){
+                    
+                        readbuff[readbuff_offset]=state[i].uart->read();
+                        readbuff_offset++;
+                    }
+					
+					if ( (readbuff[readbuff_offset-2] != 'O') || 
+					     (readbuff[readbuff_offset-1] != 'K') ) {
+					
+					    //log error
+                        hal.console->printf("no response from FONA, ATE0\n");
+						break;					    
+					}
+					
+				    bool network_active = false;
+				    
+				    while (!network_active){
+				    
+				        state[i].uart->println("AT+CGATT?");
+
+				        if(!state[i].uart->wait_timeout(9, 1000)){
+					        //timeout, log error
+					        hal.console->printf("no response from FONA, AT+CGATT?\n");
+					        break;
+				        }
+				        
+				        while (state[i].uart->available()){
+                        
+                            readbuff[readbuff_offset]=state[i].uart->read();
+                            readbuff_offset++;
+                        }
+                        
+                        if ( (readbuff[readbuff_offset-9] == '+') && 
+					         (readbuff[readbuff_offset-8] == 'C') &&
+					         (readbuff[readbuff_offset-7] == 'G') &&
+					         (readbuff[readbuff_offset-6] == 'A') &&
+					         (readbuff[readbuff_offset-5] == 'T') &&
+					         (readbuff[readbuff_offset-4] == 'T') &&
+					         (readbuff[readbuff_offset-3] == ':') &&
+					         (readbuff[readbuff_offset-2] == ' ') &&
+					         (readbuff[readbuff_offset-1] == '1') ) {
+					    
+					        network_active = true;
+					        					    
+					    }
+				    }
+                    
+
+					//send AT+CIPMODE=1
+					//wait OK
+					//send AT+CSTT=AP_FONA_APN
+					//wait OK
+					//send AT+CIICR
+					//wait OK
+					//send AT+CIFSR
+					//wait for valid IP address
+					//send AT+CIPSTART=”TCP”, AP_FONA_REM_HOSTNAME, AP_FONA_REM_PORT
+					//wait OK
+					//wait CONNECT
+*/
                     break;
                 case SerialProtocol_FrSky_D:
                     // Note baudrate is hardcoded to 9600
@@ -344,7 +420,8 @@ AP_SerialManager::SerialProtocol AP_SerialManager::get_mavlink_protocol(mavlink_
     uint8_t chan_idx = (uint8_t)(mav_chan - MAVLINK_COMM_0);
     for (uint8_t i=0; i<SERIALMANAGER_NUM_PORTS; i++) {
         if (state[i].protocol == SerialProtocol_MAVLink ||
-            state[i].protocol == SerialProtocol_MAVLink2) {
+            state[i].protocol == SerialProtocol_MAVLink2 ||
+            state[i].protocol == SerialProtocol_MAVLink2_FONA) {
             if (instance == chan_idx) {
                 return (SerialProtocol)state[i].protocol.get();
             }
@@ -411,8 +488,8 @@ bool AP_SerialManager::protocol_match(enum SerialProtocol protocol1, enum Serial
     }
 
     // mavlink match
-    if (((protocol1 == SerialProtocol_MAVLink) || (protocol1 == SerialProtocol_MAVLink2)) &&
-        ((protocol2 == SerialProtocol_MAVLink) || (protocol2 == SerialProtocol_MAVLink2))) {
+    if (((protocol1 == SerialProtocol_MAVLink) || (protocol1 == SerialProtocol_MAVLink2) || (protocol1 == SerialProtocol_MAVLink2_FONA)) &&
+        ((protocol2 == SerialProtocol_MAVLink) || (protocol2 == SerialProtocol_MAVLink2) || (protocol2 == SerialProtocol_MAVLink2_FONA))) {
         return true;
     }
 
